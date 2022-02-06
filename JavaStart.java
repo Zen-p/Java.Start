@@ -119,5 +119,7 @@ public class JavaStart {
         System.out.println(d5);
         System.out.println(d6);
         System.out.println(d7);
+        
+        //По задаче все хорошо
     }
 }
