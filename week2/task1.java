@@ -2,6 +2,8 @@ package week2;
 
 import java.util.Scanner;
 
+//По задаче все хорошо, единственное, это в Java классы должны называться с большой буквы
+//task1 -> Task1
 public class task1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
