@@ -16,7 +16,7 @@ public class Task2 {
 
         for (int i = 0; i < shifr.length; i++) {
             System.out.print(shifr[i+x]);
-        }
+        }//Ума не приложу что не так
 
 
 
