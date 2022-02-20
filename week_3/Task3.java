@@ -17,10 +17,11 @@ public class Task3 {
             if (i != count -1){
                 if (nums[i] > nums[i+1]){
                     nums[i+1] = nums[i];
+                    System.out.println(nums[i]);
 
                 }
             }
-            System.out.println(nums[i]);
+
         }
 
     }
