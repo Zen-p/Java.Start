@@ -7,11 +7,10 @@ public class Task1 {
         Scanner s = new Scanner(System.in);
         System.out.println("Введите 5 чисел:");
         int[] nums = new int[5];
-        nums[0] = s.nextInt();
-        nums[1] = s.nextInt();
-        nums[2] = s.nextInt();
-        nums[3] = s.nextInt();
-        nums[4] = s.nextInt();
+        for (int i = 0; i < 5; i++) {
+            nums[i] = s.nextInt();
+        }
+
 
         for (int i = 0; i < 5; i++) {
             if (nums[i] % 2 == 0) {
