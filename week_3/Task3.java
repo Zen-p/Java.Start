@@ -2,6 +2,9 @@ package week_3;
 
 import java.util.Scanner;
 
+// исходный массив не сортируется. при тесте с использованием чисел 1, -1, 0 на консоль выводит 1 1
+// молодец, что попытался сделать, погугли и попытайся решить эту задачу с помощью пузырьковой сортировки и сортировки выбором
+
 public class Task3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
