@@ -2,6 +2,7 @@ package week_3;
 
 import java.util.Scanner;
 
+// тут все отлично!
 public class Task1 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
