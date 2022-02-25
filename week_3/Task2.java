@@ -25,6 +25,7 @@ public class Task2 {
         
         String  encryptedString = new String(newtext);
         System.out.println(encryptedString);
+        System.out.print("Исходное сообщение: " + rootString + "\nзашифрованное сообщение: " + encryptedString + "\nшифр: " + encryprion);
 
     }
 }
