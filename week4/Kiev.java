@@ -1,5 +1,7 @@
 package week4;
 
+import static java.lang.Thread.*;
+
 public class Kiev {
     void latte() {
         System.out.println("Thanks for order in Kiev, take your latte. Bye!");
@@ -12,6 +14,9 @@ public class Kiev {
     }
     void coffee_with_milk() {
         System.out.println("Thanks for order in Kiev, take your coffee with milk. Bye!");
+    }
+    void waiting (){
+        System.out.println("Wait a few seconds:");
     }
 
 

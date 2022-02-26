@@ -13,4 +13,8 @@ public class NewYork {
     void coffee_with_milk() {
         System.out.println("Thanks for order in NewYork, take your coffee with milk. Bye!");
     }
+    void waiting () {
+        System.out.println("Wait a few seconds:");
+    }
+
 }
