@@ -2,17 +2,24 @@ package week4;
 
 import java.util.Scanner;
 
-
+// мы делаем полноценное приложение, этот класс лучше назвать как-то осмысленно, вроде CoffeeShop
 public class Task1_1 {
     public static void main(String[] args) {
+        //в конце ты не закрываешь этот сканнер
         Scanner sc = new Scanner(System.in);
-        System.out.println("Из какого вы города?(Выбрать нужное: Moscow, NewYork, Minsk, Kiev)");
+        // здесь пользвателю будет непонятно что от него ждут что он введет цифру. Лучше ему об этом явно написать
+        //я немного переписал нижнюю строку чтобы ты понимал как будет лучше
+        System.out.println("Из какого вы города?(Выбрать нужное:\n1.Moscow\n2.NewYork\n3.Minsk\n4.Kiev)");
         int town = sc.nextInt();
+        //то же самое и с выбором кофе
         System.out.println("Выберите один из предложенных вариантов кофе: latte, espresso, cappuccino, coffee with milk");
         int coffee = sc.nextInt();
         if (town == 1) {
+            //переменные должны называться с маленькой буквы
             Moscow Moscow = new Moscow();
             if (coffee == 1){
+                //вызов метода waiting должен происходить изнутри методов latte, espresso и тд
+                //это позволит очистить вызывающий код и перенести эту логику внутрь самих классов
                 Moscow.waiting();
                 Moscow.latte();
             } else if (coffee == 2) {
