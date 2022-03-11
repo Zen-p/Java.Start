@@ -16,14 +16,17 @@ public class Task2 {
         char [] mas = rootString.toCharArray();
         int len = mas.length;
         char [] newtext = new char[len];
-        
+
+
+        StringBuffer encryptedString = new StringBuffer(newtext.length);
         for (int i = 0; i < len; i++) {
             int a = (int) mas[i] + encryprion;
             newtext[i] = (char) a;
-
+            encryptedString.append(newtext[i]);
         }
         
-        String  encryptedString = new String(newtext);
+
+
         System.out.println(encryptedString);
         System.out.print("Исходное сообщение: " + rootString + "\nзашифрованное сообщение: " + encryptedString + "\nшифр: " + encryprion);
 
