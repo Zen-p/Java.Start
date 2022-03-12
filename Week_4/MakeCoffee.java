@@ -8,6 +8,13 @@ public abstract class MakeCoffee {
 
     public MakeCoffee(String name, int whatTypeOfCoffee) {
         this.name = name;
+        if (whatTypeOfCoffee == 1) {
+            makeLatte();
+        } else if (whatTypeOfCoffee == 2) {
+            makeCappuccino();
+        } else {
+            makeOther();
+        }
     }
 
 
