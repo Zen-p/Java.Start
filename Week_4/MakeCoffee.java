@@ -20,15 +20,15 @@ public abstract class MakeCoffee {
 
     public void makeLatte() {
         Waiting();
-        System.out.printf("Thanks for order in %s, take your latte. Bye!", name);
+        System.out.printf("Thanks for order in %s, take your latte. Bye!\n", name);
         }
     public void makeCappuccino() {
         Waiting();
-        System.out.printf("Thanks for order in  %s, take your cappuccino. Bye!", name);
+        System.out.printf("Thanks for order in  %s, take your cappuccino. Bye!\n", name);
         }
     public void makeOther() {
         Waiting();
-        System.out.printf("Thanks for order in %s, take our other. Bye!", name);
+        System.out.printf("Thanks for order in %s, take our other. Bye!\n", name);
         }
 
     public static void Waiting() {
