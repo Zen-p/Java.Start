@@ -2,6 +2,7 @@ package Week7;
 
 import java.util.ArrayList;
 
+//имелось в виду создать собственный параметризированный класс. ArrayList это существующий класс
 public class Generic {
     public static void main(String[] args) {
         //Попытка создания чего-то похожего нa дженерик
