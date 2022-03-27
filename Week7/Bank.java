@@ -3,6 +3,8 @@ package Week7;
 import java.util.HashMap;
 import java.util.Scanner;
 
+//не уверен что ты пытался тут реализовать, нужно было идти по пунктам задания: создать класс BankMenu, в нем методы и т.д.
+
 //Мне кажется, что следующим заданием будет внедрение службы такси..
 public class Bank {
     public void start() {
