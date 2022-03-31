@@ -17,7 +17,7 @@ public class BankMenu {
         if (logOrReg == 1) {
             showLogin();
         } else if (logOrReg == 2) {
-            showRegister();
+            showRegistration();
         } else {
             System.out.println("Выбрана неверная операция!");
         }
@@ -31,7 +31,7 @@ public class BankMenu {
 
         }
 
-    private void showRegister(){
+    private void showRegistration(){
 
         }
 
