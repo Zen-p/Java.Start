@@ -10,15 +10,18 @@ public class User {
     private String surname;
     private Date birthDate;
     private boolean gender;
-    private String eMail;
+    private String email;
     private String password;
     private List<Loan> loanList;
     private List<DebitCard> dbtCardList;
 
+    public User(String name, String surname, Boolean gender, String email, String password) {
+    }
+
     @Override
     public String toString() {
         return ("Name: " + name + "\nSurname: " + surname + "\nBirth Date: " + birthDate + "\nGender: " + gender +
-                "\nE-mail: " + eMail + "\nPassword: " + password + "Loans: " + loanList + "\nDebit Cards: " + dbtCardList);
+                "\nE-mail: " + email + "\nPassword: " + password + "Loans: " + loanList + "\nDebit Cards: " + dbtCardList);
     }
 
     public String getName () {
@@ -50,10 +53,10 @@ public class User {
     }
 
     public String getEMail () {
-        return eMail;
+        return email;
     }
     public void setEMail (String eMail) {
-        this.eMail = eMail;
+        this.email = eMail;
     }
 
     public String getPassword () {
