@@ -46,7 +46,10 @@ public class BankMenu{
         bank.doLogin(email, password);
         sc.close();
         }
+    
+    //непонятно зачем тут эта переменная. В остальном все ок в этом классе
     private User user;
+    
     private void showRegistration(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your name:");
