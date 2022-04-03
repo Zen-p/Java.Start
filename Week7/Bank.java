@@ -19,7 +19,7 @@ public class Bank {
     }
 
     void serializeUsers(List<User> users) throws IOException {
-        FileOutputStream outputStream = new FileOutputStream("D:\\\\for_lessons\\\\Week7\\\\Users.data");
+        FileOutputStream outputStream = new FileOutputStream("D:\\for_lessons\\Week7\\Users.data");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
 
     }
