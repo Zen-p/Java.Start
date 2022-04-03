@@ -18,8 +18,16 @@ public class Bank {
     }
 
     void serializeUsers(List<User> users) throws IOException {
-        FileOutputStream outputStream = new FileOutputStream("D:\\\\for_lessons\\\\Week7\\\\Users.data");
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+        try{
+            FileOutputStream fos = new FileOutputStream("Users.data");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(User);
+            oos.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
 
     }
 
