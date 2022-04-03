@@ -1,11 +1,14 @@
 package Week7;
 
-import java.io.*;
-import java.util.List;
-import java.util.Arrays;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.List;
 
 public class Bank {
+    private Object User;
+
     public void start() {
         BankMenu bankMenu = new BankMenu();
         bankMenu.showStartMenu();
@@ -18,8 +21,17 @@ public class Bank {
     }
 
     void serializeUsers(List<User> users) throws IOException {
-        FileOutputStream outputStream = new FileOutputStream("D:\\\\for_lessons\\\\Week7\\\\Users.data");
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+        try {
+            FileOutputStream fos = new FileOutputStream("Users.data");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(User);
+            oos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 

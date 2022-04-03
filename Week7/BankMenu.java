@@ -5,8 +5,8 @@ package Week7;
 import java.util.Scanner;
 
 public class BankMenu{
-    private Bank bank = null;
-    public BankMenu() {
+    private Bank bank;
+    public BankMenu() throws NullPointerException{
         this.bank = bank;
     }
 

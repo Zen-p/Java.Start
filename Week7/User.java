@@ -1,11 +1,12 @@
 package Week7;
 
+import java.io.Serializable;
 import java.util.List;
 
 import java.util.Date;
 
 
-public class User {
+public class User implements Serializable {
     private String name;
     private String surname;
     private Date birthDate;
