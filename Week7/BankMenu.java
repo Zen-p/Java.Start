@@ -56,7 +56,7 @@ public class BankMenu{
         String name = sc.nextLine();
         System.out.print("Enter last name:");
         String surname = sc.nextLine();
-        System.out.println("Enter date of birth");//Я не понимаю как ввести дату с клавиатуры
+        System.out.println("Enter date of birth");
         System.out.print("Your gender:(man - true, woman - false)");
         Boolean gender = sc.nextBoolean();
         System.out.print("Your email:");
