@@ -4,12 +4,13 @@ import java.io.*;
 import java.util.List;
 import java.util.Arrays;
 
-
+//тут пока нечего комментировать
 public class Bank {
     public void start() {
         BankMenu bankMenu = new BankMenu();
         bankMenu.showStartMenu();
     }
+
     public Boolean doLogin(String email, String password) {
         return true;
     }
