@@ -29,7 +29,7 @@ public class Bank {
         users.add(user);
         try {
             serializeUsers(users);
-        } catch (NullPointerException e){
+        } catch (Exception e){
             System.out.println("Something is wrong");
         }
 
@@ -42,8 +42,6 @@ public class Bank {
             oos.close();
         } catch (Exception e){
             System.out.println("Fatal Error");
-        } finally {
-
         }
     }
 
