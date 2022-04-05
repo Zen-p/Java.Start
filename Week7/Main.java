@@ -1,10 +1,7 @@
 package Week7;
 
-
-import java.io.IOException;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
         Bank bank = new Bank();
         bank.start();
     }

@@ -8,14 +8,11 @@ public class Bank {
     private final String FILE_NAME = "Users.data";
     BankMenu bankMenu = new BankMenu(this);
     private List<User> users;
-
-    public void users (List<User> users) {
-        this.users = users;
-    }
-
     public void start() {
+        deserializeUsers();
         bankMenu.showStartMenu();
     }
+
     public Boolean doLogin(String email, String password) {
         for (User user : users) {
             if (user.getEMail() == email && user.getPassword() == password) {
@@ -27,35 +24,24 @@ public class Bank {
 
     public void doRegister(User user)  {
         users.add(user);
-        try {
-            serializeUsers(users);
-        } catch (Exception e){
-            System.out.println("Something is wrong");
-        }
-
-
+        serializeUsers(users);
     }
-    public Bank bank;
+
     public void serializeUsers(List<User> users) {
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(users);
-            oos.close();
         } catch (Exception e){
             System.out.println("Fatal Error");
         }
     }
 
     public void deserializeUsers() {
-        try {
-            FileInputStream fis = new FileInputStream(FILE_NAME);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            
-            List<User> user = (List<User>) ois.readObject();
-            ois.close();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+            users = (List<User>) ois.readObject();
         } catch (IOException e) {
             System.out.println("Can't read file");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Class not found");
+        } catch (Exception e) {
+            System.out.println("Something is wrong");
         }
     }
 
