@@ -17,7 +17,14 @@ public class User implements Serializable {
     private List<DebitCard> dbtCardList;
 
     public User(String name, String surname, Boolean gender, String email, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.gender = gender;
+        this.email = email;
+        this.password = password;
     }
+
+
 
     @Override
     public String toString() {

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class BankMenu{
     private Bank bank;
-    public BankMenu() throws NullPointerException{
+    public BankMenu(Bank bank){
         this.bank = bank;
     }
 
@@ -41,29 +41,38 @@ public class BankMenu{
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter email:");
         String email = sc.nextLine();
+
         System.out.print("Enter password:");
         String password = sc.nextLine();
+
         bank.doLogin(email, password);
         sc.close();
         }
     
     //непонятно зачем тут эта переменная. В остальном все ок в этом классе
-    private User user;
+
     
-    private void showRegistration(){
+    public void showRegistration(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your name:");
         String name = sc.nextLine();
+
         System.out.print("Enter last name:");
         String surname = sc.nextLine();
-        System.out.println("Enter date of birth");//Я не понимаю как ввести дату с клавиатуры
-        System.out.print("Your gender:(man - true, woman - false)");
+
+        System.out.print("Enter date of birth");
+        String birthDtae = sc.nextLine();
+
+        System.out.print("Your gender: (man - true, woman - false)");
         Boolean gender = sc.nextBoolean();
+
         System.out.print("Your email:");
         String g = sc.nextLine();
         String email = sc.nextLine();
-        System.out.print("Yor password:");
+
+        System.out.print("Your password:");
         String password = sc.nextLine();
+
         User user = new User(name, surname, gender, email, password);
         bank.doRegister(user);
     }
