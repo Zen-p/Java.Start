@@ -10,17 +10,23 @@ public class BankMenu{
         this.bank = bank;
     }
 
-    public void showStartMenu() {
-        Scanner sc = new Scanner(System.in);
+    public void waiting () {
         System.out.println("All operators are currently busy. Please wait...");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        showStartMenu();
+    }
+
+
+
+    public void showStartMenu() {
+        Scanner sc = new Scanner(System.in);
+
         System.out.println("Hello. I am your personal assistant.");
         System.out.println("Select one:\n1.Login\n2.Register\n0.Exit");
-
 
         int logOrReg = sc.nextInt();
         if (logOrReg == 1) {
@@ -33,9 +39,28 @@ public class BankMenu{
         sc.close();
     }
 
-        public void showBankMenu() {
+        public void showBankMenu(User user) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Choose an operation:");
             System.out.println("1. Show my info\n2. Add loan\n3. Add debit card\n0. Exit");
-        }
+            int operation = sc.nextInt();
+            if (operation == 0) {
+                System.exit(0);
+            } else if (operation == 1){
+                System.out.println(user);
+                showBankMenu(user);
+            } else if (operation == 2) {
+                AddALoan(user);
+                showBankMenu(user);
+            } else if (operation == 3) {
+                AddDebitCard(user);
+                showBankMenu(user);
+            } else {
+                System.out.println("Wrong operation selected!");
+            }
+
+
+    }
 
     private void showLogin(){
         Scanner sc = new Scanner(System.in);
@@ -76,5 +101,46 @@ public class BankMenu{
         User user = new User(name, surname, gender, email, password);
         bank.doRegister(user);
     }
+
+    public void AddALoan (User user) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter date of loan:");
+        String date = sc.nextLine();
+        System.out.print("enter the loan amount:");
+        Double sum = sc.nextDouble();
+        System.out.print("Enter interest rate: ");
+        double interestRate = sc.nextDouble();
+        System.out.print("enter the term for which you want to take a loan:");
+        int months = sc.nextInt();
+        System.out.print("Enter monthly payment: ");
+        double monthlyPayment = sc.nextDouble();
+        Loan loan = new Loan(date, sum, interestRate, months, monthlyPayment);
+        sc.close();
+        bank.addLoan(loan, user);
+
+    }
+
+    public void AddDebitCard(User user){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("card balance:");
+        Double balance = sc.nextDouble();
+        System.out.print("Enter card number:");
+        String s = sc.nextLine();
+        String cardNumber = sc.nextLine();
+        System.out.print("Enter end date:");
+        String endDate = sc.nextLine();
+        System.out.println("Enter CVV-code:");
+        int cvv = sc.nextInt();
+        sc.close();
+        DebitCard debitCard = new DebitCard(balance, cardNumber, endDate, cvv);
+        bank.addDebitCard(debitCard, user);
+
+    }
+
+
+
+
+
+
 }
 

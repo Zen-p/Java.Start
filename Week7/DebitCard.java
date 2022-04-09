@@ -1,14 +1,20 @@
 package Week7;
 
-import java.util.Date;
-
 
 public class DebitCard {
     private double balance;
     private String CardNumber;
-    private Date endDate;
+    private String endDate;
     private int CVV;
-   
+
+    public DebitCard(Double balance, String cardNumber, String endDate, int cvv) {
+        this.balance = balance;
+        this.CardNumber = cardNumber;
+        this.endDate = endDate;
+        this.CVV = cvv;
+
+    }
+
     @Override
     
     public String toString() {
@@ -28,10 +34,10 @@ public class DebitCard {
         this.CardNumber = cardNumber;
     }
 
-    public Date getendDate () {
+    public String getendDate () {
         return endDate;
     }
-    public void setendDate (Date expDate) {
+    public void setendDate (String expDate) {
         this.endDate = expDate;
     }
 

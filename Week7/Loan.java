@@ -3,22 +3,31 @@ package Week7;
 import java.util.Date;
 
 public class Loan {
-    private Date dateOfIssue;
+    private String dateOfIssue;
     private double sum;
     private double interestRate;
     private int creditTerm;
     private double payment;
+
+    public Loan(String date, Double sum, double interestRate, int months, double monthlyPayment) {
+        this.dateOfIssue = dateOfIssue;
+        this.interestRate = interestRate;
+        this.sum = sum;
+        this.creditTerm = creditTerm;
+        this.payment = payment;
+    }
+
     @Override
     public String toString () {
         return ("Registration Date: " + dateOfIssue + "\nAmount: " + sum + "\nInterest Rate: " + interestRate + "\nTerm: " + creditTerm
                 + "\nMonthly Payment: " + payment);
     }
 
-    public Date getDateOfIssue () {
+    public String getDateOfIssue () {
         return dateOfIssue;
     }
     public void setDateOfIssue (Date dateOfIssue) {
-        this.dateOfIssue = dateOfIssue;
+        this.dateOfIssue = String.valueOf(dateOfIssue);
     }
 
     public double getsum () {

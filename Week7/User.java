@@ -1,8 +1,8 @@
 package Week7;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-
 import java.util.Date;
 
 
@@ -13,8 +13,8 @@ public class User implements Serializable {
     private boolean gender;
     private String email;
     private String password;
-    private List<Loan> loanList;
-    private List<DebitCard> dbtCardList;
+    private List<Loan> loanList = new ArrayList<>();
+    private List<DebitCard> dbtCardList = new ArrayList<>();
 
     public User(String name, String surname, Boolean gender, String email, String password) {
         this.name = name;
@@ -29,7 +29,7 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return ("Name: " + name + "\nSurname: " + surname + "\nBirth Date: " + birthDate + "\nGender: " + gender +
-                "\nE-mail: " + email + "\nPassword: " + password + "Loans: " + loanList + "\nDebit Cards: " + dbtCardList);
+                "\nE-mail: " + email + "\nPassword: " + password + "\nLoans: " + loanList + "\nDebit Cards: " + dbtCardList);
     }
 
     public String getName () {
@@ -89,4 +89,10 @@ public class User implements Serializable {
     }
 
 
+    public void ApproveaCreditToAUser(Loan loan) {
+        this.loanList.add(loan);
+    }
+    public void ApproveDebitCardToAUser(DebitCard debitCard) {
+        this.dbtCardList.add(debitCard);
+    }
 }
