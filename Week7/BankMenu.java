@@ -39,6 +39,11 @@ public class BankMenu{
         sc.close();
     }
 
+        //здесь не очень хорошо вызывать в каждом else if метод showBankMenu, так как это рекурсия и при долгой работе приложения
+        // возможен stack overflow error. лучше переделать с использованием цикла
+        //также необязательно здесь принимать в параметрах User, так как можно для первого if создать еще один метод в Bank и вызывать его
+        //это позволит нам изолировать залогиневшегося юзера от класса BankMenu, что очень хорошо
+        //методы addLoan и addDebitCard также не нуждаются в параметре user, так как в конце их работы ты передаешь продукт в класс Bank (а там уже есть доступ к залогиневшемуся юзеру)
         public void showBankMenu(User user) {
             Scanner sc = new Scanner(System.in);
             System.out.println("Choose an operation:");
@@ -102,6 +107,7 @@ public class BankMenu{
         bank.doRegister(user);
     }
 
+    //методы должны называться с маленькой буквы
     public void AddALoan (User user) {
         Scanner sc = new Scanner(System.in);
         System.out.print("enter date of loan:");
