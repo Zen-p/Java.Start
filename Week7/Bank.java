@@ -5,21 +5,25 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//в этом классе нужно хранить залогиневшегося юзера, про это было в условии задачи
 public class Bank {
     private List<User> users;
     private final String FILE_NAME = "Users.data";
     BankMenu bankMenu = new BankMenu(this);
+    //тут должно быть поле User user, которое будет хранить залогиневшегося юзера
 
     public void start() {
         users = deserializeUsers();
         bankMenu.waiting();
     }
 
+    //этот метод должен возвращать true/false
     public User doLogin(String email, String password) {
         for (User user : users) {
             if (user.getEMail().equalsIgnoreCase(email)) {
                 if (user.getPassword().equalsIgnoreCase(password)) {
                     System.out.println("Successful authorization!");
+                    //а здесь ты будешь сохранять найденного юзера в поле User user
                     bankMenu.showBankMenu(user);
                     return user;
                 } else {
