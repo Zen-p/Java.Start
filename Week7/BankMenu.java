@@ -75,6 +75,7 @@ public class BankMenu{
         System.out.print("Enter password:");
         String password = sc.nextLine();
 
+        //здесь нужно проверить что вернулось из метода doLogin, если false то нужно написать что-то юзеру, типа что неправильный пароль
         bank.doLogin(email, password);
         sc.close();
         }
